@@ -1,0 +1,76 @@
+
+html,body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: normal 100%/1.5 sans-serif;
+  background: #ffffff url(raster.gif) no-repeat;
+  width: 90%;
+  margin: 5% auto;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.query {
+  display: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#writeroot,
+#additional,
+h3 {
+  display: none;
+}
+
+#alert {
+  display: block;
+}
+
+p span {
+  display: block;
+  border: 1px solid red;
+  width: 50%;
+}
+
+@media only all {
+  #writeroot,
+  #additional,
+  h3 {
+    display: block;
+  }
+
+  #alert {
+    display: none;
+  }
+}
+
+@media screen {
+  #mediaqueries span {
+    overflow: hidden;
+    text-indent: -9999px;
+    display: block;
+    height: 0;
+  }
+  #mediaqueries:before {
+    content: "@media screen";
+  }
+}
+
+@media (orientation: portrait) {
+  #orientation:before {
+    content: "portrait";
+  }
+}
+
+@media (orientation: landscape) {
+  #orientation:before {
+    content: "landscape";
+  }
+}
