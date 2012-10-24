@@ -74,3 +74,10 @@ p span {
     content: "landscape";
   }
 }
+
+/* For testing the actual outcome */
+@media screen and (min-width: 20em) {
+  body {
+    /*background: red;*/
+  }
+}
