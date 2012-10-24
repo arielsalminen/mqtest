@@ -20,11 +20,11 @@ function refreshTest() {
   log('<span id="mediaqueries"></span>');
 
   //log('documentElement.offset = ' + document.documentElement.offsetWidth + ' / ' + document.documentElement.offsetHeight);
-  log('max-width: ' + document.documentElement.clientWidth + 'px / max-height: ' + document.documentElement.clientHeight + 'px');
+  log('min-width: ' + document.documentElement.clientWidth + 'px / min-height: ' + document.documentElement.clientHeight + 'px');
 
-  log('max-width: ' + document.documentElement.clientWidth / 16 + 'em / max-height: ' + document.documentElement.clientHeight / 16 + 'em');
+  log('min-width: ' + document.documentElement.clientWidth / 16 + 'em / min-height: ' + document.documentElement.clientHeight / 16 + 'em');
   
-  log('max-device-width: ' + screen.width + 'px / max-device-height: ' + screen.height + 'px');
+  log('min-device-width: ' + screen.width + 'px / min-device-height: ' + screen.height + 'px');
   
 //  log('documentElement.scroll = ' + document.documentElement.scrollLeft + ' / ' + document.documentElement.scrollTop);
 //  log('writeroot.offset = ' + writeroot.offsetWidth + ' / ' + writeroot.offsetHeight);
