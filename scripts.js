@@ -11,21 +11,16 @@ function init() {
   testLayer = document.getElementById('huge');
   document.getElementById('testButton').onclick = refreshTest;
   refreshTest();
-  refreshTest(); //repeat so that the writeroot is filled with data at the moment its height is measured.
+  refreshTest(); // repeat so that the writeroot is filled with data
 }
 
 function refreshTest() {
   var ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1;
-  
   log('<span id="mediaqueries"></span>');
-
   //log('documentElement.offset = ' + document.documentElement.offsetWidth + ' / ' + document.documentElement.offsetHeight);
   log('min-width: ' + document.documentElement.clientWidth + 'px / min-height: ' + document.documentElement.clientHeight + 'px');
-
   log('min-width: ' + document.documentElement.clientWidth / 16 + 'em / min-height: ' + document.documentElement.clientHeight / 16 + 'em');
-  
   log('min-device-width: ' + screen.width + 'px / min-device-height: ' + screen.height + 'px');
-  
 //  log('documentElement.scroll = ' + document.documentElement.scrollLeft + ' / ' + document.documentElement.scrollTop);
 //  log('writeroot.offset = ' + writeroot.offsetWidth + ' / ' + writeroot.offsetHeight);
   //log('window.innerWidth/Height = ' + window.innerWidth + ' / ' + window.innerHeight);
@@ -38,12 +33,9 @@ function refreshTest() {
     log('screen.logicalX/YDPI= ' + screen.logicalXDPI +' / ' + screen.logicalYDPI);
   }
   //log('window.page = ' + window.pageXOffset+ ' / ' + window.pageYOffset);
-  
   log('orientation: <span id="orientation"></span>');
-  
   log('(test iteration ' + counter + ')');
   counter +=1;
-  
   set();
 }
 
@@ -51,7 +43,7 @@ function refreshTest() {
 var logString;
 
 function log(msg) {
-  logString += '<li>' + msg + '</li>';  
+  logString += '<li>' + msg + '</li>';
 }
 
 function set () {
