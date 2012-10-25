@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="preload no-js">
   <head>
-    <title>Screen size test &middot; Test which media queries a browser will respond to.</title>
+    <title>Screen size test &middot; Test which media queries your browser responds to.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="js/scripts.js"></script>
@@ -9,31 +9,24 @@
   </head>
   <body>
     <div class="header">
-      <div class="wrapper">
-        <h1>Screen size test</h1>
-        <h2>Test which media queries a browser will respond to, when using viewport meta tag with "width=device-width".</h2>
-        <button id="testButton">Refresh the test</button>
-        <div id="iterations"></div>
-      </div>
+      <h1>Screen size test</h1>
+      <h2>Test which media queries your browser responds to when using viewport meta tag with "width=device-width".</h2>
+      <button id="testButton">Refresh the test</button>
+      <div id="iterations"></div>
     </div>
 
     <div class="content">
-      <div class="wrapper">
-        <h3>Your browser will respond from 1px and up, all the way to these:</h3>
-        <div class="nosupport">Your browser doesn't support media queries :(</div>
-        <ul id="respondList"></ul>
+      <h3>This browser reads media queries from 1px and up all the way to</h3>
+      <div class="nosupport">Your browser doesn't support media queries :(</div>
+      <ul id="respondList"></ul>
 
-        <h3>Browser's user agent:</h3>
-        <div id="useragent"></div>
-
-      </div>
+      <h3>Browser's user agent</h3>
+      <div id="useragent"></div>
     </div>
 
     <div class="footer">
-      <div class="wrapper">
-        <p>Site by <a href="http://viljamis.com/">Viljami Salminen</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
-        <p>You should note that not all possible combinations are tested. Instead these tests focus on the most useful features. Currently this page tests following: media query support, width, height, device-width, device-height, device-pixel-ratio, orientation and if media type 'screen' is supported.</p>
-      </div>
+      <p>Screen size test by <a href="http://viljamis.com/">Viljami S.</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
+      <p>You should note that this test requires JS and not all possible combinations are tested. Instead tests focus on the most useful/used media query features. Currently this page tests following: <em>media query support, width, height, device-width, device-height, device-pixel-ratio, orientation</em> and if <em>media type 'screen'</em> is supported.</p>
     </div>
 
   </body>

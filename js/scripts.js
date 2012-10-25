@@ -36,17 +36,18 @@ function set() {
 // Tests
 function runTests() {
   var ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1;
-  log('min-width: ' + docEl.clientWidth + 'px / min-height: ' + docEl.clientHeight + 'px');
-  log('min-width: ' + docEl.clientWidth / 16 + 'em / min-height: ' + docEl.clientHeight / 16 + 'em');
-  log('min-device-width: ' + screen.width + 'px / min-device-height: ' + screen.height + 'px');
+  log('width <b>' + docEl.clientWidth + 'px / ' + docEl.clientWidth / 16 + 'em</b>');
+  log('height <b>' + docEl.clientHeight + 'px / ' + docEl.clientHeight / 16 + 'em</b>');
+  log('device-width <b>' + screen.width + 'px</b>');
+  log('device-height <b>' + screen.height + 'px</b>');
   if (window.devicePixelRatio) {
-    log('min-device-pixel-ratio: ' + ratio);
+    log('device-pixel-ratio <b>' + ratio + '</b>');
   }
   if (screen.deviceXDPI) {
     log('screen.deviceX/YDPI= ' + screen.deviceXDPI + ' / ' + screen.deviceYDPI);
     log('screen.logicalX/YDPI= ' + screen.logicalXDPI + ' / ' + screen.logicalYDPI);
   }
-  log('orientation: <span id="orientation"></span>');
+  log('orientation <b><span id="orientation"></span></b>');
   log('<span id="mediaqueries"><span>Doesn´t support @media screen</span></span>');
   document.getElementById('iterations').innerHTML = ('Test number: ' + iterations);
   document.getElementById('useragent').innerHTML = useragent;
