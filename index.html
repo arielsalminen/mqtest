@@ -6,69 +6,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <script>
-      var step = 25;
-      var maximumSize = 2200;
-      document.write('<style id="test">');
-      for (var i=step;i<maximumSize+1;i+=step) {
-        document.write('@media all and (min-width: ' + (i+1) + 'px) and (max-width: ' + (i+step) + 'px) {');
-        document.write('#width' + i + '{display: list-item}');
-        document.write('#width {display: none;} }');
-        document.write('@media all and (min-device-width: ' + (i+1) + 'px) and (max-device-width: ' + (i+step) + 'px) {');
-        document.write('#devicewidth' + i + '{display: list-item}');
-        document.write('#devicewidth {display: none;} }');
-        document.write('@media all and (min-height: ' + (i+1) + 'px) and (max-height: ' + (i+step) + 'px) {');
-        document.write('#height' + i + '{display: list-item}');
-        document.write('#height {display: none;} }');
-        document.write('@media all and (min-device-height: ' + (i+1) + 'px) and (max-device-height: ' + (i+step) + 'px) {');
-        document.write('#deviceheight' + i + '{display: list-item}');
-        document.write('#deviceheight {display: none;} }');
-      }
-      document.write('</style>');
-    </script>
   </head>
   <body>
     <div class="header">
-      <h1>Screen size test</h1>
-      <h2>Test which media queries a browser will respond to, when using viewport meta tag with "width=device-width".</h2>
-      <button id="testButton">Refresh the test</button>
-      <div id="iterations"></div>
+      <div class="wrapper">
+        <h1>Screen size test</h1>
+        <h2>Test which media queries a browser will respond to, when using viewport meta tag with "width=device-width".</h2>
+        <button id="testButton">Refresh the test</button>
+        <div id="iterations"></div>
+      </div>
     </div>
 
     <div class="content">
-      <h3>Your browser will respond from 1px and up all the way to these:</h3>
-      <div class="nosupport">Your browser doesn't support media queries :(</div>
-      <ul id="respondList"></ul>
+      <div class="wrapper">
+        <h3>Your browser will respond from 1px and up, all the way to these:</h3>
+        <div class="nosupport">Your browser doesn't support media queries :(</div>
+        <ul id="respondList"></ul>
 
-      <h3>Browser's user agent:</h3>
-      <div id="useragent"></div>
+        <h3>Browser's user agent:</h3>
+        <div id="useragent"></div>
 
-      <h3 class="additional_header">Additional tests done with actual media queries (just to make sure):</h3>
-      <ul id="additional">
-        <li id="width">Media queries for screen width not supported.</li>
-        <li id="devicewidth">Media queries for device width not supported.</li>
-        <li id="height">Media queries for screen height not supported.</li>
-        <li id="deviceheight">Media queries for device height not supported.</li>
-        <script>
-          for (var i=step;i<maximumSize+1;i+=step) {
-            document.write('<li class="query" id="width' + i + '">Width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
-          }
-          for (var i=step;i<maximumSize+1;i+=step) {
-            document.write('<li class="query" id="height' + i + '">Height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
-          }
-          for (var i=step;i<maximumSize+1;i+=step) {
-            document.write('<li class="query" id="devicewidth' + i + '">Device width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
-          }
-          for (var i=step;i<maximumSize+1;i+=step) {
-            document.write('<li class="query" id="deviceheight' + i + '">Device height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
-          }
-        </script>
-      </ul>
+      </div>
     </div>
 
     <div class="footer">
-      <p>Site by <a href="http://viljamis.com/">Viljami Salminen</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
-      <p>You should note that not all possible combinations are tested. Instead these tests focus on the most useful features. Currently this page tests following: media query support, width, height, device-width, device-height, device-pixel-ratio, orientation and if media type 'screen' is supported.</p>
+      <div class="wrapper">
+        <p>Site by <a href="http://viljamis.com/">Viljami Salminen</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
+        <p>You should note that not all possible combinations are tested. Instead these tests focus on the most useful features. Currently this page tests following: media query support, width, height, device-width, device-height, device-pixel-ratio, orientation and if media type 'screen' is supported.</p>
+      </div>
     </div>
 
   </body>
