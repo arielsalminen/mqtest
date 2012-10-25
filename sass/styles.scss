@@ -1,0 +1,150 @@
+/*
+  TITLE:    Styles for screensizetest.com
+  AUTHOR:   @viljamis
+  VERSION:  1.0
+*/
+
+// Compass
+@import "compass/css3";
+@import "reset.scss";
+
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* RWD
+--------------------------------------------- */
+@-ms-viewport { width: device-width }
+@viewport { width: device-width }
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.preload * { @include transition(none !important) }
+
+/* BASE
+--------------------------------------------- */
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0, 0.2);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  @include hyphens(auto);
+}
+
+body {
+  font: normal 100%/1.3 sans-serif;
+  background: #fff url("../img/raster.gif") no-repeat;
+  width: 90%;
+  margin: 5% auto;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 2em;
+}
+
+h3 {
+  font-size: 1.125em;
+  font-weight: 900;
+  margin: 2em 0 1em;
+}
+
+ul,p {
+  margin-bottom: 1em;
+}
+
+.footer {
+  margin-top: 4em;
+}
+
+.query {
+  display: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#respondList,
+#additional,
+.additional_header {
+  display: none;
+}
+
+.nosupport {
+  display: block;
+}
+
+p span {
+  display: block;
+  border: 1px solid red;
+  width: 50%;
+}
+
+#orientation:before {
+  content: "not supported";
+}
+
+@media only all {
+  #respondList,
+  #additional,
+  .additional_header {
+    display: block;
+  }
+
+  .nosupport {
+    display: none;
+  }
+}
+
+@media screen {
+  #mediaqueries span {
+    overflow: hidden;
+    text-indent: -9999px;
+    display: block;
+    height: 0;
+  }
+  #mediaqueries:before {
+    content: "@media screen";
+  }
+}
+
+@media (orientation: portrait) {
+  #orientation:before {
+    content: "portrait";
+  }
+}
+
+@media (orientation: landscape) {
+  #orientation:before {
+    content: "landscape";
+  }
+}
+
+/* For testing the actual outcome */
+@media screen and (min-width: 20em) {
+  body {
+    /*background: red;*/
+  }
+}
