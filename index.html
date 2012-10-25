@@ -6,13 +6,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="js/scripts.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <script>
+      var step = 25;
+      var maximumSize = 2200;
+      document.write('<style id="test">');
+      for (var i=step;i<maximumSize+1;i+=step) {
+        document.write('@media all and (min-width: ' + (i+1) + 'px) and (max-width: ' + (i+step) + 'px) {');
+        document.write('#width' + i + '{display: list-item}');
+        document.write('#width {display: none;} }');
+        document.write('@media all and (min-device-width: ' + (i+1) + 'px) and (max-device-width: ' + (i+step) + 'px) {');
+        document.write('#devicewidth' + i + '{display: list-item}');
+        document.write('#devicewidth {display: none;} }');
+        document.write('@media all and (min-height: ' + (i+1) + 'px) and (max-height: ' + (i+step) + 'px) {');
+        document.write('#height' + i + '{display: list-item}');
+        document.write('#height {display: none;} }');
+        document.write('@media all and (min-device-height: ' + (i+1) + 'px) and (max-device-height: ' + (i+step) + 'px) {');
+        document.write('#deviceheight' + i + '{display: list-item}');
+        document.write('#deviceheight {display: none;} }');
+      }
+      document.write('</style>');
+    </script>
   </head>
   <body>
     <div class="header">
       <h1>Screen size test</h1>
       <h2>Test which media queries your browser responds to when using viewport meta tag with "width=device-width".</h2>
-      <button id="testButton">Refresh the test</button>
-      <div id="iterations"></div>
+      <button id="testButton">Refresh test <span id="iterations"></span></button>
+      
     </div>
 
     <div class="content">
@@ -22,6 +42,28 @@
 
       <h3>Browser's user agent</h3>
       <div id="useragent"></div>
+      
+      <h3 class="additional_header">Additional CSS tests for dev environment</h3>
+        <ul id="additional">
+          <li id="width">Media queries for screen width not supported.</li>
+          <li id="devicewidth">Media queries for device width not supported.</li>
+          <li id="height">Media queries for screen height not supported.</li>
+          <li id="deviceheight">Media queries for device height not supported.</li>
+          <script>
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="width' + i + '">width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="height' + i + '">height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="devicewidth' + i + '">device-width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="deviceheight' + i + '">device-height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+          </script>
+        </ul>
     </div>
 
     <div class="footer">

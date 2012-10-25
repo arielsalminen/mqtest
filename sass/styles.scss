@@ -20,6 +20,15 @@
   box-sizing: border-box;
 }
 
+@mixin disable-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @-ms-viewport { width: device-width }
 @viewport { width: device-width }
 
@@ -33,18 +42,17 @@ $font: sans-serif;
 --------------------------------------------- */
 
 html {
-  -webkit-tap-highlight-color: rgba(0,0,0, 0.2);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
   @include hyphens(auto);
   background: $color-white;
+  min-width: 200px;
 }
 
 body {
   font: normal 75%/1.3 $font;
-  width: 90%;
-  margin: 6% auto;
+  margin: 2em 1em 1em;
   color: $color-black;
 }
 
@@ -54,28 +62,31 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  text-align: center;
+  font-size: 2.4em;
   line-height: 1;
   font-weight: 900;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
   letter-spacing: -1px;
 }
 
 h2 {
-  font-size: 1.5em;
+  text-align: center;
+  font-size: 1.25em;
   font-weight: normal;
   margin-bottom: 1.2em;
 }
 
 h3 {
-  font-size: 1.125em;
+  font-size: 1em;
   font-weight: 900;
   margin: 2em 0 0;
+  text-align: center;
   @include box-sizing;
   border-bottom: 0;
   background: lighten($color-black, 80%);
   width: 100%;
-  padding: 0.6em 1em;
+  padding: 1em 1em 0.9em;
 }
 
 #useragent {
@@ -89,7 +100,8 @@ h3 {
 
 #respondList,
 #additional,
-.additional_header {
+.additional_header,
+.query {
   display: none;
 }
 
@@ -110,19 +122,29 @@ strong,b { font-weight: bold }
 .nosupport { display: block }
 #orientation:before { content: "not supported" }
 
+a {
+  text-decoration: underline;
+  color: lighten($color-black, 40%);
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @media only all {
   #respondList,
   #additional,
   .additional_header {
     display: block;
   }
-  #respondList {
+  #respondList,
+  #additional {
     li {
       @include box-sizing;
       width: 100%;
       padding: 1em;
       margin: 0;
-      &:nth-child(even) { background: lighten($color-black, 93%); }
+      border-bottom: 1px solid lighten($color-black, 80%);
     }
     b { float: right }
   }
@@ -156,6 +178,8 @@ strong,b { font-weight: bold }
 }
 
 button {
+  -webkit-tap-highlight-color: rgba(255,255,255, 0.8);
+  @include disable-select;
   -webkit-appearance: none;
   background: $color-black;
   border: 0;
@@ -165,39 +189,28 @@ button {
   font: bold 100%/1 $font;
   width: 100%;
   cursor: pointer;
-  
+
   &:active { background: lighten($color-black, 20%) }
 }
 
 #iterations {
-  width: 100%;
-  padding: 0.4em 0;
+  font-weight: normal;
+  color: darken($color-white, 40%);
+  display: inline;
 }
 
 /* FOOTER
 --------------------------------------------- */
 
 .footer {
-  margin-top: 3em;
+  margin-top: 2em;
+  padding-bottom: 0.6em;
   width: 100%;
 }
 
-/* SCALE UP
+/* SCALE
 --------------------------------------------- */
-@media screen and (min-width: 30em) {
-  body {
-    font-size: percentage(14/16);
-  }
-}
-@media screen and (min-width: 50em) {
-  body {
-    font-size: percentage(16/16);
-    width: 80%;
-  }
-}
-@media screen and (min-width: 70em) {
-  body {
-    font-size: percentage(18/16);
-    width: 70%;
-  }
+
+@media screen and (min-width: 17.5em) {
+  body { font-size: 100% }
 }
