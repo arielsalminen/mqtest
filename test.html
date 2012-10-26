@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="preload no-js">
+  <head>
+    <title>Screen size test &middot; Test which media queries your browser responds to.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+      var step = 20,
+        maximumSize = 2200;
+      document.write('<style id="test">');
+      for (var i=step;i<maximumSize+1;i+=step) {
+        document.write('@media all and (min-width: ' + (i+1) + 'px) and (max-width: ' + (i+step) + 'px) {');
+        document.write('#width' + i + '{display: list-item}');
+        document.write('#width {display: none;} }');
+        document.write('@media all and (min-device-width: ' + (i+1) + 'px) and (max-device-width: ' + (i+step) + 'px) {');
+        document.write('#devicewidth' + i + '{display: list-item}');
+        document.write('#devicewidth {display: none;} }');
+        document.write('@media all and (min-height: ' + (i+1) + 'px) and (max-height: ' + (i+step) + 'px) {');
+        document.write('#height' + i + '{display: list-item}');
+        document.write('#height {display: none;} }');
+        document.write('@media all and (min-device-height: ' + (i+1) + 'px) and (max-device-height: ' + (i+step) + 'px) {');
+        document.write('#deviceheight' + i + '{display: list-item}');
+        document.write('#deviceheight {display: none;} }');
+      }
+      document.write('</style>');
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Screen size test</h1>
+      <h2>Test which media queries your browser responds to when using viewport meta tag with "width=device-width".</h2>
+      <button id="testButton">Refresh test <span id="iterations"></span></button>
+      
+    </div>
+
+    <div class="content">
+      <h3>This browser reads media queries from 1px and up all the way to</h3>
+      <div class="nosupport">Your browser doesn't support media queries :(</div>
+      <ul id="respondList"></ul>
+
+      <h3>Browser's user agent</h3>
+      <div id="useragent"></div>
+      
+      <h3 class="additional_header">Additional CSS tests</h3>
+        <ul id="additional">
+          <li id="width">Media queries for screen width not supported.</li>
+          <li id="devicewidth">Media queries for device width not supported.</li>
+          <li id="height">Media queries for screen height not supported.</li>
+          <li id="deviceheight">Media queries for device height not supported.</li>
+          <script>
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="width' + i + '">width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="height' + i + '">height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="devicewidth' + i + '">device-width is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+            for (var i=step;i<maximumSize+1;i+=step) {
+              document.write('<li class="query" id="deviceheight' + i + '">device-height is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+            }
+          </script>
+        </ul>
+    </div>
+
+    <div class="footer">
+      <p>Screen size test by <a href="http://viljamis.com/">Viljami S.</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
+      <p>You should note that this test requires JS and not all possible combinations are tested. Instead tests focus on the most useful/used media query features. Currently this page tests following: <em>media query support, width, height, device-width, device-height, device-pixel-ratio, orientation</em> and if <em>media type 'screen'</em> is supported.</p>
+    </div>
+
+  </body>
+</html>
