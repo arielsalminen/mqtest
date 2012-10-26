@@ -48,7 +48,6 @@ function runTests() {
     log('screen.logicalX/YDPI= ' + screen.logicalXDPI + ' / ' + screen.logicalYDPI);
   }
   log('orientation <b><span id="orientation"></span></b>');
-  log('<span id="mediaqueries"><span>Doesn´t support @media screen</span></span>');
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
   document.getElementById('useragent').innerHTML = useragent;
   iterations += 1;
