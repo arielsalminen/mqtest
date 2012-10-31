@@ -9,14 +9,15 @@
  *
 */
 
+/*jslint eqeq: false, forin: false, nomen: false, plusplus: true, sloppy: true, stupid: false, browser: true, indent: 2 */
+
 // Variables
 var docEl = document.documentElement,
-  useragent = navigator.userAgent,
+  ua = navigator.userAgent,
   ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1,
   w = screen.width,
   h = screen.height,
   respondList,
-  devicePixelRatio,
   log,
   logString,
   iterations = 0,
@@ -50,7 +51,7 @@ function runTests() {
   }
   log('orientation <b><span id="orientation"></span></b>');
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
-  document.getElementById('useragent').innerHTML = useragent;
+  document.getElementById('useragent').innerHTML = ua;
   iterations += 1;
   set();
 }
