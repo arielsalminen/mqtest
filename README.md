@@ -2,9 +2,8 @@
 
 ### [MQtest.io](http://mqtest.io/) is a simple tool to help identify which media queries your browser responds to when using ‘width=device-width.’
 
-Built by [Viljami Salminen](http://twitter.com/viljamis). Parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html), thank you [@ppk](http://twitter.com/ppk) and [@dblooman](http://twitter.com/dblooman).
 
-If you have any ideas on how to make this better or what else to test, please post them using GitHub issues.
+Built by [Viljami Salminen](http://twitter.com/viljamis). Parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html), thank you [@ppk](http://twitter.com/ppk) and [@dblooman](http://twitter.com/dblooman). If you have any ideas on how to make this better or what else to test, please post them using GitHub issues.
 
 
 License
