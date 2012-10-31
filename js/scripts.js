@@ -13,15 +13,14 @@
 var docEl = document.documentElement,
   useragent = navigator.userAgent,
   ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1,
+  w = screen.width,
+  h = screen.height,
   respondList,
   devicePixelRatio,
   log,
   logString,
   iterations = 0,
   resizeTimer = null;
-
-// Remove "preload" and "no-js" classes and add "js" class
-docEl.className = docEl.className.replace(/(^|\s)no-js preload(\s|$)/, 'js ');
 
 // Log a result
 function log(msg) {
@@ -36,10 +35,12 @@ function set() {
 
 // Tests
 function runTests() {
-  log('width <b>' + docEl.clientWidth + 'px / ' + docEl.clientWidth / 16 + 'em</b>');
-  log('height <b>' + docEl.clientHeight + 'px / ' + docEl.clientHeight / 16 + 'em</b>');
-  log('device-width <b>' + screen.width + 'px</b>');
-  log('device-height <b>' + screen.height + 'px</b>');
+  var docW = docEl.clientWidth,
+    docH = docEl.clientHeight;
+  log('width <b>' + docW + 'px / ' + docW / 16 + 'em</b>');
+  log('height <b>' + docH + 'px / ' + docH / 16 + 'em</b>');
+  log('device-width <b>' + w + 'px</b>');
+  log('device-height <b>' + h + 'px</b>');
   if (window.devicePixelRatio) {
     log('device-pixel-ratio <b>' + ratio + '</b>');
   }

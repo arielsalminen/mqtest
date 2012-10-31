@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" class="preload no-js">
+<html lang="en">
   <head>
-    <title>MQtest.io &mdash; A simple tool that tests which media queries your browser responds to.</title>
+    <title>MQtest.io &mdash; A simple tool to help identify which media queries your browser responds to.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="js/scripts.js?v=2"></script>
-    <link rel="stylesheet" href="css/styles.css?v=2">
+    <link rel="stylesheet" href="css/styles.css?v=0.1">
+    <script src="js/scripts.js?v=0.1"></script>
   </head>
   <body>
     <h1><a href="http://mqtest.io">MQtest.io</a></h1>
-    <h2>A simple tool that tests which media queries your browser responds to when using &lsquo;width=device-width&rsquo;</h2>
+    <h2>A simple tool to help identify which media queries your browser responds to when using ‘width=device-width.’</h2>
     <button id="testButton">Test again <span id="iterations"></span></button>
-    <h3>What your browsers reports</h3>
+    <h3>Browser responds to</h3>
     <div class="nosupport">Your browser doesn't support media queries :(</div>
-    <ul id="respondList"></ul>
-    <h3>Browser's user agent</h3>
+    <ul id="respondList">
+      <li>JavaScript is turned off or not supported :(</li>
+    </ul>
+    <h3>Browser’s User agent</h3>
     <div id="useragent"></div>
-    <p class="footer">Built by <a href="http://twitter.com/viljamis" rel="external">Viljami Salminen</a>. Source code is hosted at <a href="#" rel="external">GitHub</a>. Parts of the tests adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html" rel="external">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html" rel="external">BBC's Reporter</a>.</p>
+    <p class="footer">Built by <a href="http://twitter.com/viljamis" rel="external">Viljami Salminen</a>. Source code is hosted at <a href="#" rel="external">GitHub</a>. Parts of the tests adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html" rel="external">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html" rel="external">BBC’s Reporter</a>.</p>
   </body>
 </html>

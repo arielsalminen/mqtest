@@ -35,26 +35,23 @@
 
 // Font-face
 @font-face {
-  font-family: "ProximaNova-Extrabld-Custom";
-  src:  url("../fonts/24A50E_2_0.eot");
-  src:  url("../fonts/24A50E_2_0.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/24A50E_2_0.woff") format("woff"),
-        url("../fonts/24A50E_2_0.ttf") format("truetype");
+  font-family: 'ProximaNova-Extrabld-Custom';
+  src: url('../fonts/proxima-custom-webfont.eot');
+  src: url('../fonts/proxima-custom-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/proxima-custom-webfont.woff') format('woff'),
+       url('../fonts/proxima-custom-webfont.ttf') format('truetype'),
+       url('../fonts/proxima-custom-webfont.svg#webfontuploaded_file') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 // Mixins
-@mixin image-replacement {
-  text-indent: -9999px;
-  overflow: hidden;
-  display: block;
-}
 @mixin box-sizing {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 @mixin disable-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -63,11 +60,13 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 @mixin prevent-bleed {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   background-clip: padding-box;
 }
+
 @mixin prevent-text-size-adjust {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -82,7 +81,8 @@ $color-blue-alt2: #0e455a;
 $color-black: #06202a;
 
 // Type
-$font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-tiny-screen: sans-serif;
+$font-default: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-proxima: "ProximaNova-Extrabld-Custom", sans-serif;
 
 /* BASE
@@ -90,8 +90,6 @@ $font-proxima: "ProximaNova-Extrabld-Custom", sans-serif;
 
 @-ms-viewport { width: device-width }
 @viewport { width: device-width }
-
-.preload * { @include transition(none !important) }
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -101,10 +99,17 @@ html {
 }
 
 body {
-  font: normal percentage(14/16)/1.3 $font;
-  margin: 2em auto 1em;
+  font: normal percentage(14/16)/1.3 $font-tiny-screen;
+  margin: 7% auto;
   color: $color-white;
+  max-width: 900px;
   width: 87%;
+}
+
+h1,h2,h3 {
+  -moz-font-feature-settings: "liga=1, kern=1";
+  -ms-font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
@@ -116,7 +121,7 @@ h1 {
 }
 
 h2 {
-  font: bold 1.75em/1.1 $font-proxima;
+  font: bold 1.75em/1.125 $font-proxima;
   margin-bottom: .8em;
   color: $color-white;
 }
@@ -125,7 +130,9 @@ h3 {
   @include border-top-radius(6px);
   @include box-sizing;
   background: $color-blue-alt2;
-  font: 800 1em/1 $font;
+  font-weight: 800;
+  font-size: 1em;
+  line-height: 1;
   margin: 2em 0 0;
   border-bottom: 0;
   padding: 1em;
@@ -136,10 +143,13 @@ button {
   -webkit-tap-highlight-color: rgba(255,255,255, 0.8);
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   background: $color-blue-alt;
+  @include transition(background-color .3s ease);
   @include border-radius(6px);
   @include disable-select;
   -webkit-appearance: none;
-  font: bold 100%/1 $font;
+  font-weight: bold;
+  font-size: percentage(16/16);
+  line-height: 1;
   color: $color-white;
   padding: 1em 0 1.1em;
   margin: 0 0 .4em;
@@ -147,7 +157,10 @@ button {
   width: 100%;
   border: 0;
   &:hover { background: darken($color-blue-alt, 10%) }
-  &:active { background: darken($color-blue-alt, 20%) }
+  &:active {
+    background: darken($color-blue-alt, 20%);
+    @include transition(none);
+  }
 }
 
 #iterations {
@@ -167,8 +180,6 @@ button {
 }
 
 #respondList,
-#additional,
-.additional_header,
 .query {
   display: none;
 }
@@ -213,13 +224,10 @@ a {
 --------------------------------------------- */
 
 @media only all {
-  #respondList,
-  #additional,
-  .additional_header {
+  #respondList {
     display: block;
   }
-  #respondList,
-  #additional {
+  #respondList {
     li {
       border-bottom: 1px solid $color-blue-alt2;
       @include box-sizing;
@@ -245,5 +253,17 @@ a {
 --------------------------------------------- */
 
 @media screen and (min-width: 17.5em) {
-  body { font-size: percentage(16/16) }
+  body {
+    font-size: percentage(16/16);
+    font-family: $font-default;
+  }
 }
+
+@media screen and (min-width: 40em) {
+  body { font-size: percentage(18/16) }
+}
+
+@media screen and (min-width: 60em) {
+  body { margin: 4.5em auto 2em }
+}
+
