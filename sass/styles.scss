@@ -40,7 +40,7 @@
   src:  url("../fonts/24A50E_2_0.eot?#iefix") format("embedded-opentype"),
         url("../fonts/24A50E_2_0.woff") format("woff"),
         url("../fonts/24A50E_2_0.ttf") format("truetype");
-  font-weight: 800;
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -116,7 +116,7 @@ h1 {
 }
 
 h2 {
-  font: 800 1.75em/1.1 $font-proxima;
+  font: bold 1.75em/1.1 $font-proxima;
   margin-bottom: .8em;
   color: $color-white;
 }
