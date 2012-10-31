@@ -12,6 +12,7 @@
 // Variables
 var docEl = document.documentElement,
   useragent = navigator.userAgent,
+  ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1,
   respondList,
   devicePixelRatio,
   log,
@@ -35,7 +36,6 @@ function set() {
 
 // Tests
 function runTests() {
-  var ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1;
   log('width <b>' + docEl.clientWidth + 'px / ' + docEl.clientWidth / 16 + 'em</b>');
   log('height <b>' + docEl.clientHeight + 'px / ' + docEl.clientHeight / 16 + 'em</b>');
   log('device-width <b>' + screen.width + 'px</b>');
