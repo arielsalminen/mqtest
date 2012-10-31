@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="preload no-js">
   <head>
-    <title>Screen size test &middot; Test which media queries your browser responds to.</title>
+    <title>MQtest.io &mdash; A simple tool that tests which media queries your browser responds to.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="js/scripts.js?v=2"></script>
     <link rel="stylesheet" href="css/styles.css?v=2">
   </head>
   <body>
-    <div class="header">
-      <h1>ScreenSizeTest.com</h1>
-      <h2>Test which media queries your browser responds to when using viewport meta tag with &lsquo;width=device-width&rsquo;</h2>
-      <button id="testButton">Refresh test <span id="iterations"></span></button>
-      
-    </div>
-
-    <div class="content">
-      <h3>This browser reads media queries from 1px and up all the way to</h3>
-      <div class="nosupport">Your browser doesn't support media queries :(</div>
-      <ul id="respondList"></ul>
-
-      <h3>Browser's user agent</h3>
-      <div id="useragent"></div>
-    </div>
-
-    <div class="footer">
-      <p>Screen size test by <a href="http://viljamis.com/">Viljami S.</a>, follow me on <a href="http://twitter.com/viljamis">Twitter</a>. Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported</a> license. Parts of the code adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html">BBC's Device Reporter</a>.</p>
-      <p>You should note that this test requires JS and not all possible combinations are tested. Instead tests focus on the most useful/used media query features. Currently this page tests following: <em>media query support, width, height, device-width, device-height, device-pixel-ratio, orientation</em> and if <em>media type 'screen'</em> is supported.</p>
-    </div>
-
+    <h1><a href="http://mqtest.io">MQtest.io</a></h1>
+    <h2>A simple tool that tests which media queries your browser responds to when using &lsquo;width=device-width&rsquo;</h2>
+    <button id="testButton">Test again <span id="iterations"></span></button>
+    <h3>What your browsers reports</h3>
+    <div class="nosupport">Your browser doesn't support media queries :(</div>
+    <ul id="respondList"></ul>
+    <h3>Browser's user agent</h3>
+    <div id="useragent"></div>
+    <p class="footer">Built by <a href="http://twitter.com/viljamis" rel="external">Viljami Salminen</a>. Source code is hosted at <a href="#" rel="external">GitHub</a>. Parts of the tests adopted from <a href="http://www.quirksmode.org/m/tests/widthtest_vpdevice.html" rel="external">Quirksmode.org</a> and <a href="http://bbc-news-prototypes.heroku.com/reporter/index.html" rel="external">BBC's Reporter</a>.</p>
   </body>
 </html>
