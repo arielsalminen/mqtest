@@ -102,7 +102,7 @@ body {
   font: normal percentage(14/16)/1.3 $font-tiny-screen;
   margin: 7% auto;
   color: $color-white;
-  max-width: 900px;
+  max-width: 800px;
   width: 87%;
 }
 
@@ -113,17 +113,23 @@ h1,h2,h3 {
 }
 
 h1 {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   font-size: 1.125em;
   font-weight: 900;
   line-height: 1;
-  a { text-decoration: none }
+  a { text-decoration: none !important; }
 }
 
 h2 {
   font: bold 1.75em/1.125 $font-proxima;
-  margin-bottom: .8em;
+  margin-bottom: .5em;
   color: $color-white;
+}
+
+p.more {
+  @include hyphens(manual);
+  margin-bottom: 2em;
+  line-height: 1.3;
 }
 
 h3 {
@@ -143,9 +149,10 @@ button {
   -webkit-tap-highlight-color: rgba(255,255,255, 0.8);
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   background: $color-blue-alt;
-  @include transition(background-color .3s ease);
+  @include background-image(linear-gradient($color-blue-alt, darken($color-blue-alt, 20%) 100%));
   @include border-radius(6px);
   @include disable-select;
+  @include prevent-bleed;
   -webkit-appearance: none;
   font-weight: bold;
   font-size: percentage(16/16);
@@ -156,10 +163,12 @@ button {
   cursor: pointer;
   width: 100%;
   border: 0;
-  &:hover { background: darken($color-blue-alt, 10%) }
+  &:hover {
+    background: darken($color-blue-alt, 10%);
+    @include background-image(linear-gradient(darken($color-blue-alt, 5%), darken($color-blue-alt, 25%) 100%));
+    }
   &:active {
     background: darken($color-blue-alt, 20%);
-    @include transition(none);
   }
 }
 
@@ -184,12 +193,6 @@ button {
   display: none;
 }
 
-p span {
-  border: 1px solid red;
-  display: block;
-  width: 50%;
-}
-
 ul {
   background: lighten($color-black, 3%);
   border: 1px solid $color-blue-alt2;
@@ -205,9 +208,9 @@ strong,b { font-weight: bold }
 #orientation:before { content: "not supported" }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: $color-blue-alt;
-  &:hover { text-decoration: none }
+  &:hover { text-decoration: underline; }
 }
 
 /* FOOTER
@@ -215,6 +218,8 @@ a {
 
 .footer {
   font-size: percentage(14/16);
+  @include hyphens(manual);
+  line-height: 1.4;
   padding-bottom: 1em;
   margin-top: 2em;
   width: 100%;
@@ -263,7 +268,7 @@ a {
   body { font-size: percentage(18/16) }
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 53em) {
   body { margin: 4.5em auto 2em }
+  h2 { font-size: 2.25em }
 }
-
