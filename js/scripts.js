@@ -1,5 +1,5 @@
 /*!
- * TITLE:    Tests for screensizetest.com
+ * TITLE:    Tests for MQtest.io
  * AUTHOR:   http://viljamis.com
  * VERSION:  0.1
  *
@@ -8,8 +8,6 @@
  * thank you @ppk and @dblooman.
  *
 */
-
-/*jslint eqeq: false, forin: false, nomen: false, plusplus: true, sloppy: true, stupid: false, browser: true, indent: 2 */
 
 // Variables
 var docEl = document.documentElement,
