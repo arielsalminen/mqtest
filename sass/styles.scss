@@ -99,7 +99,8 @@ html {
 }
 
 body {
-  font: normal percentage(14/16)/1.3 $font-tiny-screen;
+  font: normal percentage(16/16)/1.3 $font-default;
+  font-size: percentage(16/16);
   margin: 7% auto;
   color: $color-white;
   max-width: 800px;
@@ -256,13 +257,6 @@ a {
 
 /* SCALE
 --------------------------------------------- */
-
-@media screen and (min-width: 17.5em) {
-  body {
-    font-size: percentage(16/16);
-    font-family: $font-default;
-  }
-}
 
 @media screen and (min-width: 40em) {
   body { font-size: percentage(18/16) }
