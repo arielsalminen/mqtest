@@ -32,24 +32,67 @@ function set() {
   logString = '';
 }
 
+// Determine whether a value is an integer (ie. only numbers)
+function isInteger(value) {
+  return /^[0-9]+$/.test(value);
+}
+
+// Reduce a numerator and denominator to it's smallest
+function reduceRatio(numerator, denominator) {
+  var gcd, temp, divisor;
+
+  gcd = function (a, b) {
+    if (b === 0) {
+      return a;
+    }
+    return gcd(b, a % b);
+  };
+
+  // take care of some simple cases
+  if (!isInteger(numerator) || !isInteger(denominator)) {
+    return '?/?';
+  }
+  if (numerator === denominator) {
+    return '1/1';
+  }
+
+  // make sure numerator is always the larger number
+  if (+numerator < +denominator) {
+    temp = numerator;
+    numerator = denominator;
+    denominator = temp;
+  }
+
+  divisor = gcd(+numerator, +denominator);
+
+  return 'undefined' === typeof temp ? (numerator / divisor) + '/' + (denominator / divisor) : (denominator / divisor) + '/' + (numerator / divisor);
+}
+
 // Tests
 function runTests() {
   var docW = docEl.clientWidth,
     docH = docEl.clientHeight;
+
   log('width <b>' + docW + 'px / ' + docW / 16 + 'em</b>');
   log('height <b>' + docH + 'px / ' + docH / 16 + 'em</b>');
   log('device-width <b>' + w + 'px</b>');
   log('device-height <b>' + h + 'px</b>');
+
   if (window.devicePixelRatio) {
     log('device-pixel-ratio <b>' + ratio + '</b>');
   }
+
   if (screen.deviceXDPI) {
     log('screen.deviceX/YDPI= ' + screen.deviceXDPI + ' / ' + screen.deviceYDPI);
     log('screen.logicalX/YDPI= ' + screen.logicalXDPI + ' / ' + screen.logicalYDPI);
   }
+
+  log('device-aspect-ratio <b>' + reduceRatio(w, h) + '</b>');
   log('orientation <b><span id="orientation"></span></b>');
+
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
   document.getElementById('useragent').innerHTML = ua;
+
   iterations += 1;
   set();
 }
@@ -58,6 +101,7 @@ function runTests() {
 function init() {
   respondList = document.getElementById('respondList');
   document.getElementById('testButton').onclick = runTests;
+
   runTests();
   // Run twice so that the list is filled with data
   runTests();
@@ -73,6 +117,7 @@ window.onresize = function () {
   if (resizeTimer) {
     clearTimeout(resizeTimer);
   }
+
   resizeTimer = setTimeout(function () {
     resizeTimer = null;
     runTests();
