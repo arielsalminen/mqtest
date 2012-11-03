@@ -4,8 +4,10 @@
  * VERSION:  0.1
  *
  * Parts of the code adopted from
- * Quirksmode.org and BBC's Device Reporter,
- * thank you @ppk and @dblooman.
+ * Quirksmode.org, BBC's Device Reporter and
+ * Andrew Hedges's Aspect Ratio Calculator.
+ *
+ * Thank you @ppk, @dblooman and @segdeha.
  *
 */
 
@@ -32,15 +34,11 @@ function set() {
   logString = '';
 }
 
-// Determine whether a value is an integer (ie. only numbers)
-function isInteger(value) {
-  return /^[0-9]+$/.test(value);
-}
-
 // Reduce a numerator and denominator to it's smallest
 function reduceRatio(numerator, denominator) {
   var gcd, temp, divisor;
 
+  // Euclidean algorithm (GCD = Greatest Common Factor)
   gcd = function (a, b) {
     if (b === 0) {
       return a;
@@ -48,15 +46,12 @@ function reduceRatio(numerator, denominator) {
     return gcd(b, a % b);
   };
 
-  // take care of some simple cases
-  if (!isInteger(numerator) || !isInteger(denominator)) {
-    return '?/?';
-  }
+  // Take care of some simple cases
   if (numerator === denominator) {
     return '1/1';
   }
 
-  // make sure numerator is always the larger number
+  // Make sure numerator is always the larger number
   if (+numerator < +denominator) {
     temp = numerator;
     numerator = denominator;
