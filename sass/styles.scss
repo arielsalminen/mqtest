@@ -190,7 +190,8 @@ button {
 }
 
 #respondList,
-.query {
+.query,
+#test {
   display: none;
 }
 
@@ -233,7 +234,7 @@ a {
   #respondList {
     display: block;
   }
-  #respondList {
+  ul {
     li {
       border-bottom: 1px solid $color-blue-alt2;
       @include box-sizing;
