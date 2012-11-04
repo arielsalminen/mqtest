@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MQtest.io — A simple tool to help identify which media queries your device responds to.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+      var step = 20;
+      var maximumSize = 2200;
+
+      document.write('<style id="test">');
+
+      for (var i=step;i<maximumSize+1;i+=step) {
+        document.write('@media all and (min-resolution: ' + (i+1) + 'dpi) and (max-resolution: ' + (i+step) + 'dpi) {');
+        document.write('#res' + i + '{display: list-item}');
+        document.write('#res {display: none;} }');
+      }
+
+      document.write('</style>');
+    </script>
+  </head>
+  <body>
+
+    <h3>Resolution</h3>
+    <ul>
+      <li id="res">Media queries for resolution not supported.</li>
+      <script>
+      for (var i=step;i<maximumSize+1;i+=step) {
+        document.write('<li class="query" id="res' + i + '">Resolution is between ' + i + ' and ' + (i+step-1) +  'px.</li>');
+      }
+      </script>
+    </ul>
+
+  </body>
+</html>
