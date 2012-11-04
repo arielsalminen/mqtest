@@ -143,7 +143,6 @@ window.onresize = function () {
   if (w.addEventListener) {
     w.addEventListener("DOMContentLoaded", function () {
       w.toggle_info();
-      // Run once only
       w.removeEventListener("load", w.toggle_info, false);
     }, false);
     w.addEventListener("load", w.toggle_info, false);
