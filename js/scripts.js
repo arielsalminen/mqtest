@@ -17,6 +17,7 @@ var docEl = document.documentElement,
   ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1,
   w = screen.width,
   h = screen.height,
+  css_device_ratio = w + '/' + h,
   respondList,
   log,
   logString,
@@ -25,7 +26,7 @@ var docEl = document.documentElement,
 
 // Log a result
 function log(msg) {
-  logString += '<li>' + msg + '</li>';
+  logString += msg;
 }
 
 // Write all results inside 'responds to' list
@@ -68,22 +69,17 @@ function runTests() {
   var docW = docEl.clientWidth,
     docH = docEl.clientHeight;
 
-  log('width <b>' + docW + 'px / ' + docW / 16 + 'em</b>');
-  log('height <b>' + docH + 'px / ' + docH / 16 + 'em</b>');
-  log('device-width <b>' + w + 'px</b>');
-  log('device-height <b>' + h + 'px</b>');
+  log('<li>width <b>' + docW + 'px / ' + docW / 16 + 'em</b></li>');
+  log('<li>height <b>' + docH + 'px / ' + docH / 16 + 'em</b></li>');
+  log('<li>device-width <b>' + w + 'px</b>');
+  log('<li>device-height <b>' + h + 'px</b>');
 
   if (window.devicePixelRatio) {
-    log('device-pixel-ratio <b>' + ratio + '</b>');
+    log('<li class="device-pixel-ratio">device-pixel-ratio <b>' + ratio + '</b></li>');
   }
 
-  if (screen.deviceXDPI) {
-    log('screen.deviceX/YDPI= ' + screen.deviceXDPI + ' / ' + screen.deviceYDPI);
-    log('screen.logicalX/YDPI= ' + screen.logicalXDPI + ' / ' + screen.logicalYDPI);
-  }
-
-  log('device-aspect-ratio <b>' + reduceRatio(w, h) + '</b>');
-  log('orientation <b><span id="orientation"></span></b>');
+  log('<li>device-aspect-ratio <b>' + reduceRatio(w, h) + '</b></li>');
+  log('<li class="orientation">orientation <b><span id="orientation"></span></b></li>');
 
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
   document.getElementById('useragent').innerHTML = ua;
@@ -118,3 +114,41 @@ window.onresize = function () {
     runTests();
   }, 200);
 };
+
+// Info toggle
+(function (w) {
+
+  w.toggle_info = function () {
+
+    var info_open = false,
+      doc = w.document,
+      info = doc.getElementById('info'),
+      info_toggle = doc.getElementById('view-info');
+
+    info_toggle.onclick = function (event) {
+      event.preventDefault();
+      if (info_open === false) {
+        info.className = info.className.replace('closed', 'opened');
+        info_open = true;
+      } else {
+        info.className = info.className.replace('opened', 'closed');
+        info_open = false;
+      }
+      return false;
+    };
+
+  }
+
+  // Run on domready (w.load as a fallback)
+  if (w.addEventListener) {
+    w.addEventListener("DOMContentLoaded", function () {
+      w.toggle_info();
+      // Run once only
+      w.removeEventListener("load", w.toggle_info, false);
+    }, false);
+    w.addEventListener("load", w.toggle_info, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", w.toggle_info);
+  }
+
+})(this);

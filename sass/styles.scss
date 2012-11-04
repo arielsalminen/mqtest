@@ -52,6 +52,12 @@
   box-sizing: border-box;
 }
 
+@mixin image-replacement {
+  text-indent: -9999px;
+  overflow: hidden;
+  display: block;
+}
+
 @mixin disable-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -107,6 +113,10 @@ body {
   width: 87%;
 }
 
+.wrapper {
+  position: relative;
+}
+
 h1,h2,h3 {
   -moz-font-feature-settings: "liga=1, kern=1";
   -ms-font-feature-settings: "liga" 1, "kern" 1;
@@ -114,7 +124,7 @@ h1,h2,h3 {
 }
 
 h1 {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   font-size: 1.125em;
   font-weight: 900;
   line-height: 1;
@@ -123,14 +133,43 @@ h1 {
 
 h2 {
   font: bold 1.75em/1.125 $font-proxima;
-  margin-bottom: .5em;
+  margin-bottom: 0;
   color: $color-white;
 }
 
-p.more {
+#info {
+  @include transition(height .5s ease);
   @include hyphens(manual);
-  margin-bottom: 2em;
+  margin: 1em 0 .3em;
   line-height: 1.3;
+  
+  &.closed {
+    display: none;
+  }
+  
+  &.opened {
+    display: block;
+  }
+}
+
+#view-info {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  @include image-replacement;
+  background: transparent url("../img/info-1x.png") no-repeat top right;
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  &:hover { opacity: .8 }
+  &:active { opacity: .6 }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2/1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  #view-info {
+    background-image: url("../img/info-2x.png");
+    @include background-size(23px 23px !important);
+  }
 }
 
 h3 {
@@ -147,20 +186,19 @@ h3 {
 }
 
 button {
-  -webkit-tap-highlight-color: rgba(255,255,255, 0.8);
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   background: $color-blue-alt;
   @include background-image(linear-gradient($color-blue-alt, darken($color-blue-alt, 20%) 100%));
   @include border-radius(6px);
   @include disable-select;
   @include prevent-bleed;
-  -webkit-appearance: none;
   font-weight: bold;
+  font-family: $font-default;
   font-size: percentage(16/16);
   line-height: 1;
   color: $color-white;
   padding: 1em 0 1.1em;
-  margin: 0 0 .4em;
+  margin: 1.5em 0 0;
   cursor: pointer;
   width: 100%;
   border: 0;
@@ -190,6 +228,8 @@ button {
 }
 
 #respondList,
+.device-aspect-ratio,
+.orientation,
 .query,
 #test {
   display: none;
@@ -201,6 +241,15 @@ ul {
   @include border-bottom-radius(6px);
   @include prevent-bleed;
   @include box-sizing;
+  li {
+    border-bottom: 1px solid $color-blue-alt2;
+    @include box-sizing;
+    padding: 1em;
+    width: 100%;
+    margin: 0;
+    &:last-child { border: 0 }
+  }
+  b { float: right }
 }
 
 ul,p { margin-bottom: 1em }
@@ -234,36 +283,27 @@ a {
   #respondList {
     display: block;
   }
-  ul {
-    li {
-      border-bottom: 1px solid $color-blue-alt2;
-      @include box-sizing;
-      padding: 1em;
-      width: 100%;
-      margin: 0;
-      &:last-child { border: 0 }
-    }
-    b { float: right }
-  }
   .nosupport { display: none }
 }
 
 @media (orientation: portrait) {
   #orientation:before { content: "portrait" }
+  .orientation { display: block }
 }
 
 @media (orientation: landscape) {
   #orientation:before { content: "landscape" }
+  .orientation { display: block }
 }
 
 /* SCALE
 --------------------------------------------- */
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 42em) {
   body { font-size: percentage(18/16) }
 }
 
-@media screen and (min-width: 53em) {
+@media screen and (min-width: 54em) {
   body { margin: 4.5em auto 2em }
   h2 { font-size: 2.25em }
 }
