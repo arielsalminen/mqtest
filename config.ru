@@ -5,7 +5,7 @@ use Rack::Deflater
 use Rack::CacheHeaders if ENV["RACK_ENV"] == "production"
 
 use Rack::Static, 
-  :urls => ["/img", "/js", "/css"],
+  :urls => ["/img", "/js", "/css", "/favicon.ico"],
   :root => "./"
 
 run lambda { |env|
