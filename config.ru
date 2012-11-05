@@ -1,3 +1,9 @@
+require "./lib/rack/cache_headers"
+
+use Rack::Head
+use Rack::Deflater
+use Rack::CacheHeaders if ENV["RACK_ENV"] == "production"
+
 use Rack::Static, 
   :urls => ["/img", "/js", "/css"],
   :root => "./"
