@@ -1,8 +1,0 @@
-# Apache configuration file
-<Files .htaccess>
-  order allow,deny
-  deny from all
-</Files>
-
-# Directory index
-DirectoryIndex index.html
