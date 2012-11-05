@@ -89,7 +89,7 @@ html {
   -webkit-font-smoothing: antialiased;
   @include prevent-text-size-adjust;
   background: $color-black;
-  min-width: 200px;
+  min-width: 220px;
 }
 
 body {
@@ -293,4 +293,9 @@ a {
 @media screen and (min-width: 54em) {
   body { margin: 4.5em auto 2em }
   h2 { font-size: 2.25em }
+}
+
+@media screen and (max-width: 18em) {
+  h2 { font-size: 1.5em }
+  body { font-size: percentage(12/16) }
 }
