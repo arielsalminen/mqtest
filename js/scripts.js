@@ -73,12 +73,9 @@ function runTests() {
   log('<li>height <b>' + docH + 'px / ' + docH / 16 + 'em</b></li>');
   log('<li>device-width <b>' + w + 'px</b>');
   log('<li>device-height <b>' + h + 'px</b>');
-
-  if (window.devicePixelRatio) {
-    log('<li class="device-pixel-ratio">device-pixel-ratio <b>' + ratio + '</b></li>');
-  }
-
-  log('<li>device-aspect-ratio <b>' + reduceRatio(w, h) + '</b></li>');
+  log('<li>device-pixel-ratio <b>' + ratio + '</b></li>');
+  log('<li class="device-aspect-ratio">device-aspect-ratio <b><span>' + reduceRatio(w, h) + '</span></b></li>');
+  log('<li class="device-aspect-ratio-unsupported">device-aspect-ratio <b>Unsupported</b></li>');
   log('<li class="orientation">orientation <b><span id="orientation"></span></b></li>');
 
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
