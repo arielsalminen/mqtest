@@ -1,9 +1,10 @@
 # MQtest.io
 
-### [MQtest.io](http://mqtest.io/) is a simple tool to help identify which media queries your browser responds to when using ‘width=device-width.’
+### [MQtest.io](http://mqtest.io/) is a simple tool to help identify which media queries your device responds to.
 
+This test isn’t about what media queries your device [can or cannot](http://www.jordanm.co.uk/palmreader) see. Instead it shows you which dimensions your device will respond to when using 'width=device-width.' You could think of these measures as the max-widths and max-heights in a stylesheet for the device you are esting.
 
-Built by [Viljami Salminen](http://twitter.com/viljamis). Parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html), thank you [@ppk](http://twitter.com/ppk) and [@dblooman](http://twitter.com/dblooman). If you have any ideas on how to make this better or what else to test, please post them using GitHub issues.
+Built by [Viljami Salminen](http://twitter.com/viljamis). Parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html), thank you [@ppk](http://twitter.com/ppk), [@segdeha](http://twitter.com/segdeha) and [@dblooman](http://twitter.com/dblooman).
 
 
 License
