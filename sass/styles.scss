@@ -33,18 +33,6 @@
 @import "compass/css3";
 @import "reset.scss";
 
-// Font-face
-@font-face {
-  font-family: 'ProximaNova-Extrabld-Custom';
-  src: url('../fonts/proxima-custom-webfont.eot');
-  src: url('../fonts/proxima-custom-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/proxima-custom-webfont.woff') format('woff'),
-       url('../fonts/proxima-custom-webfont.ttf') format('truetype'),
-       url('../fonts/proxima-custom-webfont.svg#webfontuploaded_file') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
 // Mixins
 @mixin box-sizing {
   -webkit-box-sizing: border-box;
@@ -89,7 +77,7 @@ $color-black: #06202a;
 // Type
 $font-tiny-screen: sans-serif;
 $font-default: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-proxima: "ProximaNova-Extrabld-Custom", sans-serif;
+$font-proxima: "proxima-nova", sans-serif;
 
 /* BASE
 --------------------------------------------- */
@@ -132,7 +120,7 @@ h1 {
 }
 
 h2 {
-  font: bold 1.75em/1.125 $font-proxima;
+  font: 800 1.75em/1.125 $font-proxima;
   margin-bottom: 0;
   color: $color-white;
 }
