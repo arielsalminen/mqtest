@@ -4,11 +4,11 @@
     <title>MQtest.io — A simple tool to help identify which media queries your device responds to.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css?v=3">
-    <script src="js/scripts.js?v=3"></script>
+    <link rel="stylesheet" href="css/styles.css?v=5">
+    <script src="js/scripts.js?v=5"></script>
     <script>
       var device_ratio = screen.width + '/' + screen.height;
-      document.write('<style>@media screen and (device-aspect-ratio: ' + css_device_ratio + ') {.device-aspect-ratio {display: block;}}</style>');
+      document.write('<style>@media screen and (device-aspect-ratio: ' + css_device_ratio + ') {.device-aspect-ratio-unsupported {display: none;} .device-aspect-ratio {display: block;}}</style>');
     </script>
   </head>
   <body>
