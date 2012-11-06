@@ -27,7 +27,8 @@
         <li>Your browser doesn't support media queries :(</li>
       </ul>
       <ul id="respondList">
-        <li>JavaScript is turned off or not supported.</li>
+        <li id="no_js">JavaScript is turned off or not supported.</li>
+        <script>document.getElementById('no_js').innerHTML = '';</script>
       </ul>
       <h3>User agent</h3>
       <div id="useragent"></div>
