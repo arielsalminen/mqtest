@@ -154,13 +154,13 @@ h3 {
 }
 
 button {
-  @include background-image(linear-gradient($color-blue-alt, darken($color-blue-alt, 20%) 100%));
-  @include border-radius(6px);
-  @include disable-select;
-  @include prevent-bleed;
   font: bold percentage(16/16)/1 $font-default;
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   background: $color-blue-alt;
+  @include background-image(linear-gradient($color-blue-alt, darken($color-blue-alt, 10%) 100%));
+  @include border-radius(6px);
+  @include disable-select;
+  @include prevent-bleed;
   color: $color-white;
   padding: 1em 0 1.1em;
   margin: 1.5em 0 0;
@@ -169,7 +169,7 @@ button {
   border: 0;
   &:hover {
     background: darken($color-blue-alt, 10%);
-    @include background-image(linear-gradient(darken($color-blue-alt, 5%), darken($color-blue-alt, 25%) 100%));
+    @include background-image(linear-gradient(darken($color-blue-alt, 5%), darken($color-blue-alt, 15%) 100%));
     }
   &:active { background: darken($color-blue-alt, 20%) }
 }
