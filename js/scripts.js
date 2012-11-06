@@ -14,7 +14,7 @@
 // Variables
 var docEl = document.documentElement,
   ua = navigator.userAgent,
-  ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 1,
+  ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 'unsupported',
   w = screen.width,
   h = screen.height,
   respondList,
