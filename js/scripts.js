@@ -3,7 +3,7 @@
  * AUTHOR:   http://viljamis.com
  * VERSION:  0.1
  *
- * Parts of the code adopted from
+ * Some parts of the tests adopted from
  * Quirksmode.org, BBC's Device Reporter and
  * Andrew Hedges's Aspect Ratio Calculator.
  *
