@@ -2,9 +2,9 @@
 
 ### [MQtest.io](http://mqtest.io/) is a simple tool to help identify which media queries your device responds to.
 
-This test isn’t about what media queries your device [can or cannot](http://www.jordanm.co.uk/palmreader) see. Instead it shows you which dimensions your device will respond to when using 'width=device-width.' You could think of these measures as the max-widths and max-heights in a stylesheet for the device you are testing.
+This test isn’t about what media queries your device [can or cannot](http://www.jordanm.co.uk/palmreader) see. Instead it shows you which dimensions your device will respond to when using 'width=device-width.' You could think of these measures as the max-widths and max-heights in a mobile first stylesheet for the device you are testing.
 
-Built by [Viljami Salminen](http://twitter.com/viljamis). Parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html).
+Built by [Viljami Salminen](http://twitter.com/viljamis). Some parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html).
 
 
 License
