@@ -25,3 +25,9 @@ Changelog
 ======
 
 `v0.1` (2012-11-5) - Release
+
+
+Want to do a pull request?
+======
+
+Great! New ideas are more than welcome, but please check the [Pull Request Guidelines](https://github.com/viljamis/mqtest/wiki/Pull-Request-Guidelines) first before doing so.
