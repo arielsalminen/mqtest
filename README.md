@@ -7,6 +7,17 @@ This test isn’t about what media queries your device [can or cannot](http://ww
 Built by [Viljami Salminen](http://twitter.com/viljamis). Some parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html).
 
 
+Installation and usage
+======
+
+Just download or clone this repository to your own machine and open index.html, no configuration needed.
+
+
+Deployment
+======
+
+Run `git push heroku master` in terminal.
+
 License
 ======
 
