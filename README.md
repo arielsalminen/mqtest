@@ -36,6 +36,7 @@ Changelog
 ======
 
 `v0.2` (2012-12-4) - Adds aspect-ratio and em measures to the device-width & device-height.
+
 `v0.1` (2012-11-5) - Release
 
 
