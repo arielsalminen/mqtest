@@ -70,11 +70,13 @@ function runTests() {
 
   log('<li>width <b>' + docW + 'px / ' + docW / 16 + 'em</b></li>');
   log('<li>height <b>' + docH + 'px / ' + docH / 16 + 'em</b></li>');
-  log('<li>device-width <b>' + w + 'px</b>');
-  log('<li>device-height <b>' + h + 'px</b>');
+  log('<li>device-width <b>' + w + 'px / ' + w / 16 + 'em</b></li>');
+  log('<li>device-height <b>' + h + 'px / '  + h / 16 + 'em</b></li>');
   log('<li>device-pixel-ratio <b>' + ratio + '</b></li>');
-  log('<li class="device-aspect-ratio">device-aspect-ratio <b>' + reduceRatio(w, h) + '</b></li>');
-  log('<li class="device-aspect-ratio-unsupported">device-aspect-ratio <b>Unsupported</b></li>');
+  log('<li class="aspect-ratio">aspect-ratio <b>' + reduceRatio(docW, docH) + '</b></li>');
+  log('<li class="aspect-ratio">device-aspect-ratio <b>' + reduceRatio(w, h) + '</b></li>');
+  log('<li class="aspect-ratio-unsupported">aspect-ratio <b>Unsupported</b></li>');
+  log('<li class="aspect-ratio-unsupported">device-aspect-ratio <b>Unsupported</b></li>');
   log('<li class="orientation">orientation <b><span id="orientation"></span></b></li>');
 
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');

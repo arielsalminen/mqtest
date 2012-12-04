@@ -12,7 +12,7 @@
 
   TITLE:    Styles for MQtest.io
   AUTHOR:   @viljamis
-  VERSION:  0.1
+  VERSION:  0.2
 
 */
 
@@ -191,8 +191,9 @@ button {
 }
 
 #respondList,
-.device-aspect-ratio,
-.query,#test {
+.aspect-ratio,
+.query,
+#test {
   display: none;
 }
 
