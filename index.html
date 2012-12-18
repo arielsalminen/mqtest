@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-title" content="MQtest.io">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=2">
     <script src="//use.typekit.net/vne4rkm.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js?v=2"></script>
     <script>
       var device_ratio = screen.width + '/' + screen.height;
-      document.write('<style>@media screen and (device-aspect-ratio: ' + device_ratio + ') {.aspect-ratio-unsupported {display: none;} .aspect-ratio {display: block;}}</style>');
+      document.write('<style class="test-styles">@media screen and (device-aspect-ratio: ' + device_ratio + ') {.aspect-ratio-unsupported {display: none;} .aspect-ratio {display: block;}}</style>');
+
+      document.write('<style class="test-styles">');
+      for (var i=mq_step;i<maximumDPI+1;i+=mq_step) {
+        document.write('@media (min-resolution: ' + (i+1) + 'dpi) and (max-resolution: ' + (i+mq_step) + 'dpi) {');
+        document.write('#resolution' + i + '{display: list-item}');
+        document.write('.resolution {display: none;} }');
+      }
+      document.write('</style>');
     </script>
   </head>
   <body>

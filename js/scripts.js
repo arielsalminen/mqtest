@@ -17,6 +17,8 @@ var docEl = document.documentElement,
   ratio = ('devicePixelRatio' in window) ? devicePixelRatio : 'unsupported',
   w = screen.width,
   h = screen.height,
+  mq_step = 5,
+  maximumDPI = 400,
   respondList,
   log,
   logString,
@@ -75,9 +77,14 @@ function runTests() {
   log('<li>device-pixel-ratio <b>' + ratio + '</b></li>');
   log('<li class="aspect-ratio">aspect-ratio <b>' + reduceRatio(docW, docH) + '</b></li>');
   log('<li class="aspect-ratio">device-aspect-ratio <b>' + reduceRatio(w, h) + '</b></li>');
-  log('<li class="aspect-ratio-unsupported">aspect-ratio <b>Unsupported</b></li>');
-  log('<li class="aspect-ratio-unsupported">device-aspect-ratio <b>Unsupported</b></li>');
+  log('<li class="aspect-ratio-unsupported">aspect-ratio <b>unsupported</b></li>');
+  log('<li class="aspect-ratio-unsupported">device-aspect-ratio <b>unsupported</b></li>');
   log('<li class="orientation">orientation <b><span id="orientation"></span></b></li>');
+  log('<li class="resolution">resolution <b>unsupported</b></li>');
+
+  for (var i=mq_step;i<maximumDPI+1;i+=mq_step) {
+    log('<li class="query" id="resolution' + i + '">resolution <b>between ' + i + '-' + (i+mq_step-1) + 'dpi</b></li>');
+  }
 
   document.getElementById('iterations').innerHTML = ('(iteration: ' + iterations + ')');
   document.getElementById('useragent').innerHTML = ua;

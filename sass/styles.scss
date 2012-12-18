@@ -12,7 +12,7 @@
 
   TITLE:    Styles for MQtest.io
   AUTHOR:   @viljamis
-  VERSION:  0.2
+  VERSION:  0.3
 
 */
 
@@ -193,7 +193,7 @@ button {
 #respondList,
 .aspect-ratio,
 .query,
-#test {
+.test-styles {
   display: none;
 }
 
@@ -209,7 +209,9 @@ ul {
     padding: 1em;
     width: 100%;
     margin: 0;
-    &:last-child { border: 0 }
+    &:last-child,
+    &.query,
+    &.resolution { border: 0 }
   }
   b { float: right }
 }
