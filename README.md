@@ -16,7 +16,7 @@ Just download or clone this repository to your own machine and open index.html, 
 Deployment
 ======
 
-Run `git push heroku master` in terminal.
+Uses GitHub pages.
 
 License
 ======
