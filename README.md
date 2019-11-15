@@ -1,6 +1,6 @@
-# MQtest.io
+# MQtest
 
-### [MQtest.io](http://mqtest.io/) is a simple tool to help identify which media queries your device responds to.
+### [MQtest](https://viljamis.github.io/mqtest/) is a simple tool to help identify which media queries your device responds to.
 
 This test isn’t about what media queries your device [can or cannot](http://www.jordanm.co.uk/palmreader) see (but it does show an 'unsupported' label if a device doesn‘t support something). Instead it shows you which dimensions your device will respond to when using 'width=device-width,initial-scale=1.'
 
