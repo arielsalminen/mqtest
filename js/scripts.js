@@ -1,5 +1,5 @@
 /*!
- * TITLE:    Tests for MQtest.io
+ * TITLE:    Tests for MQtest
  * AUTHOR:   http://viljamis.com
  * VERSION:  0.1
  *
