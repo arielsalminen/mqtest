@@ -1,6 +1,6 @@
 /*!
  * TITLE:    Tests for MQtest
- * AUTHOR:   http://viljamis.com
+ * AUTHOR:   http://arie.ls
  * VERSION:  0.1
  *
  * Some parts of the tests adopted from
