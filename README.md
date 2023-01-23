@@ -1,10 +1,10 @@
 # MQtest
 
-### [MQtest](https://viljamis.github.io/mqtest/) is a simple tool to help identify which media queries your device responds to.
+### [MQtest](https://arielsalminen.github.io/mqtest/) is a simple tool to help identify which media queries your device responds to.
 
 This test isn’t about what media queries your device [can or cannot](http://www.jordanm.co.uk/palmreader) see (but it does show an 'unsupported' label if a device doesn‘t support something). Instead it shows you which dimensions your device will respond to when using 'width=device-width,initial-scale=1.'
 
-Built by [Viljami Salminen](http://twitter.com/viljamis). Some parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html).
+Built by [Ariel Salminen](https://arie.ls). Some parts of the tests adopted from [Quirksmode.org](http://www.quirksmode.org/m/tests/widthtest_vpdevice.html), [Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/) and [BBC’s Device Reporter](http://bbc-news-prototypes.heroku.com/reporter/index.html).
 
 
 Installation and usage
@@ -23,7 +23,7 @@ License
 
 Licensed under the MIT license.
 
-Copyright (c) 2011-2012 Viljami Salminen, https://viljamis.com/
+Copyright (c) 2011-2023 Ariel Salminen, https://arie.ls
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -45,4 +45,4 @@ Changelog
 Want to do a pull request?
 ======
 
-Great! New ideas are more than welcome, but please check the [Pull Request Guidelines](https://github.com/viljamis/mqtest/wiki/Pull-Request-Guidelines) first before doing so.
+Great! New ideas are more than welcome, but please check the [Pull Request Guidelines](https://github.com/arielsalminen/mqtest/wiki/Pull-Request-Guidelines) first before doing so.
